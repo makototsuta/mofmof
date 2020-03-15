@@ -1,4 +1,4 @@
-<%= form_with(model: user, local: true) do |form| %>
+<%= nested_form_for(@user) do |form| %>
   <% if user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -39,16 +39,16 @@
   <hr>
 
   <div class="field">
-  <%= form.label :blogs, "最寄駅" %><br />
-  <%= form.fields_for :blogs do |blogs_form| %>
-    <%= blogs_form.label :route, "路線名" %>
-    <%= blogs_form.text_field :route %><br />
-    <%= blogs_form.label :station, "駅名" %>
-    <%= blogs_form.text_field :station %><br />
-    <%= blogs_form.label :minutes, "徒歩分数" %>
-    <%= blogs_form.text_field :minutes %><br />
-  <% end %>
-</div>
+    <%= form.fields_for :blogs do |blogs_form| %>
+    <%= form.label :blogs, "最寄駅" %><br />
+      <%= blogs_form.label :route, "路線名" %>
+      <%= blogs_form.text_field :route %><br />
+      <%= blogs_form.label :station, "駅名" %>
+      <%= blogs_form.text_field :station %><br />
+      <%= blogs_form.label :minutes, "徒歩分数" %>
+      <%= blogs_form.text_field :minutes %><br />
+    <% end %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>
