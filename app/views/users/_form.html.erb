@@ -12,29 +12,43 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :property %>
+    <%= form.label :property, "物件名" %>
     <%= form.text_field :property %>
   </div>
 
   <div class="field">
-    <%= form.label :rent %>
+    <%= form.label :rent, "賃料" %>
     <%= form.text_field :rent %>
   </div>
 
   <div class="field">
-    <%= form.label :address %>
+    <%= form.label :address, "住所" %>
     <%= form.text_field :address %>
   </div>
 
   <div class="field">
-    <%= form.label :year %>
+    <%= form.label :year, "築年数" %>
     <%= form.text_field :year %>
   </div>
 
   <div class="field">
-    <%= form.label :note %>
+    <%= form.label :note, "備考" %>
     <%= form.text_field :note %>
   </div>
+
+  <hr>
+
+  <div class="field">
+  <%= form.label :blogs, "最寄駅" %><br />
+  <%= form.fields_for :blogs do |blogs_form| %>
+    <%= blogs_form.label :route, "路線名" %>
+    <%= blogs_form.text_field :route %><br />
+    <%= blogs_form.label :station, "駅名" %>
+    <%= blogs_form.text_field :station %><br />
+    <%= blogs_form.label :minutes, "徒歩分数" %>
+    <%= blogs_form.text_field :minutes %><br />
+  <% end %>
+</div>
 
   <div class="actions">
     <%= form.submit %>
