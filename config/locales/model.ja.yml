@@ -1,0 +1,20 @@
+ja:
+  activerecord:
+    models:
+      blog: ブログ
+      user: ユーザー
+    attributes:
+      blog:
+        route: 路線名
+        station: 駅名
+        minutes: 徒歩分数
+      user:
+        property: 物件名
+        rent: 賃料
+        address: 住所
+        year: 築年数
+        note: 備考
+  helpers:
+    submit:
+      create: 登録する
+      update: 更新する
