@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
-    2.times { @user.blogs.build }
+    @user.blogs.build
   end
 
   # GET /users/1/edit
