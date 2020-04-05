@@ -4,47 +4,47 @@
 
 <p>
   <strong>&emsp;物件名:</strong>
-  <%= @user.property %>
+  <%= @property_information.property %>
 </p>
 
 <p>
   <strong>&emsp;賃料:</strong>
-  <%= @user.rent %>
+  <%= @property_information.rent %>
 </p>
 
 <p>
   <strong>&emsp;住所:</strong>
-  <%= @user.address %>
+  <%= @property_information.address %>
 </p>
 
 <p>
   <strong>&emsp;築年数:</strong>
-  <%= @user.year %>
+  <%= @property_information.year %>
 </p>
 
 <p>
   <strong>&emsp;備考:</strong>
-  <%= @user.note %>
+  <%= @property_information.note %>
 </p>
 
 <hr>
 <% i = 0 %>
-<% @user.blogs.each do |blog| %>
+<% @property_information.add_stations.each do |add_station| %>
   <% i += 1 %>
   <h4><%= "最寄駅#{i}" %></h4>
   <p>
     <strong>&emsp;路線名:</strong>
-    <%= blog.route %>
+    <%= add_station.route %>
   </p>
   <p>
     <strong>&emsp;駅名:</strong>
-    <%= blog.station %>
+    <%= add_station.station %>
   </p>
   <p>
     <strong>&emsp;徒歩分数:</strong>
-    <%= blog.minutes %>
+    <%= add_station.minutes %>
   </p>
 <% end %>
 
-<%= link_to '編集', edit_user_path(@user) %> |
-<%= link_to '戻る', users_path %>
+<%= link_to '編集', edit_property_information_path(@property_information) %> |
+<%= link_to '戻る', property_informations_path %>

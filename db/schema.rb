@@ -10,19 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_15_083036) do
+ActiveRecord::Schema.define(version: 2020_04_05_052956) do
 
-  create_table "blogs", force: :cascade do |t|
+  create_table "add_stations", force: :cascade do |t|
     t.string "route"
     t.string "station"
     t.string "minutes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
-    t.index ["user_id"], name: "index_blogs_on_user_id"
+    t.integer "property_information_id"
+    t.index ["property_information_id"], name: "index_add_stations_on_property_information_id"
+    t.index ["user_id"], name: "index_add_stations_on_user_id"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "property_informations", force: :cascade do |t|
     t.string "property"
     t.string "rent"
     t.string "address"
